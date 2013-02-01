@@ -166,7 +166,12 @@ class CI_Cache_file extends CI_Driver {
 			return FALSE;
 		}
 
+<<<<<<< HEAD
 		$data = unserialize(file_get_contents($this->_cache_path.$id));
+=======
+		$data = read_file($this->_cache_path.$id);
+		$data = unserialize($data);
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 
 		if (is_array($data))
 		{
@@ -178,8 +183,13 @@ class CI_Cache_file extends CI_Driver {
 			}
 
 			return array(
+<<<<<<< HEAD
 				'expire' => $mtime + $data['ttl'],
 				'mtime'	 => $mtime
+=======
+				'expire'	=> $mtime + $data['ttl'],
+				'mtime'		=> $mtime
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 			);
 		}
 

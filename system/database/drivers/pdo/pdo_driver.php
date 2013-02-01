@@ -21,7 +21,11 @@
  * @copyright	Copyright (c) 2008 - 2013, EllisLab, Inc. (http://ellislab.com/)
  * @license		http://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  * @link		http://codeigniter.com
+<<<<<<< HEAD
  * @since		Version 2.1.0
+=======
+ * @since		Version 2.1.2
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');

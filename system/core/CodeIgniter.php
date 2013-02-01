@@ -41,7 +41,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * CodeIgniter Version
  *
+<<<<<<< HEAD
  * @var	string
+=======
+ * @var string
+ *
+ */
+	define('CI_VERSION', '2.1.3');
+
+/**
+ * CodeIgniter Branch (Core = TRUE, Reactor = FALSE)
+ *
+ * @var boolean
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
  *
  */
 	define('CI_VERSION', '3.0-dev');

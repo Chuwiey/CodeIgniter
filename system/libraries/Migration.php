@@ -124,7 +124,11 @@ class CI_Migration {
 		}
 
 		// If not set, set it
+<<<<<<< HEAD
 		$this->_migration_path !== '' OR $this->_migration_path = APPPATH.'migrations/';
+=======
+		$this->_migration_path == '' AND $this->_migration_path = APPPATH . 'migrations/';
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 
 		// Add trailing slash if not set
 		$this->_migration_path = rtrim($this->_migration_path, '/').'/';
@@ -179,7 +183,11 @@ class CI_Migration {
 	 * Calls each migration step required to get to the schema version of
 	 * choice
 	 *
+<<<<<<< HEAD
 	 * @param	int	$target_version	Target schema version
+=======
+	 * @param	int	Target schema version
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 	 * @return	mixed	TRUE if already latest, FALSE if failed, int if upgraded
 	 */
 	public function version($target_version)
@@ -206,6 +214,12 @@ class CI_Migration {
 			$method = 'down';
 			krsort($migrations);
 		}
+<<<<<<< HEAD
+=======
+
+		$method = ($step === 1) ? 'up' : 'down';
+		$migrations = array();
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 
 		if (empty($migrations))
 		{
@@ -274,7 +288,11 @@ class CI_Migration {
 	/**
 	 * Set's the schema to the latest migration
 	 *
+<<<<<<< HEAD
 	 * @return	mixed	TRUE if already latest, FALSE if failed, int if upgraded
+=======
+	 * @return	mixed	true if already latest, false if failed, int if upgraded
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 	 */
 	public function latest()
 	{
@@ -283,7 +301,11 @@ class CI_Migration {
 		if (empty($migrations))
 		{
 			$this->_error_string = $this->lang->line('migration_none_found');
+<<<<<<< HEAD
 			return FALSE;
+=======
+			return false;
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 		}
 
 		$last_migration = basename(end($migrations));
@@ -298,7 +320,11 @@ class CI_Migration {
 	/**
 	 * Set's the schema to the migration version set in config
 	 *
+<<<<<<< HEAD
 	 * @return	mixed	TRUE if already current, FALSE if failed, int if upgraded
+=======
+	 * @return	mixed	true if already current, false if failed, int if upgraded
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 	 */
 	public function current()
 	{
@@ -322,14 +348,25 @@ class CI_Migration {
 	/**
 	 * Retrieves list of available migration scripts
 	 *
+<<<<<<< HEAD
 	 * @return	array	list of migration file paths sorted by version
+=======
+	 * @return	mixed	true if already latest, false if failed, int if upgraded
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 	 */
 	public function find_migrations()
 	{
 		$migrations = array();
 
 		// Load all *_*.php files in the migrations path
+<<<<<<< HEAD
 		foreach (glob($this->_migration_path.'*_*.php') as $file)
+=======
+		$files = glob($this->_migration_path . '*_*.php');
+		$file_count = count($files);
+
+		for ($i = 0; $i < $file_count; $i++)
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 		{
 			$name = basename($file, '.php');
 
@@ -349,6 +386,7 @@ class CI_Migration {
 			}
 		}
 
+<<<<<<< HEAD
 		ksort($migrations);
 		return $migrations;
 	}
@@ -380,6 +418,10 @@ class CI_Migration {
 		$parts = explode('_', $migration);
 		array_shift($parts);
 		return implode('_', $parts);
+=======
+		sort($files);
+		return $files;
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 	}
 
 	// --------------------------------------------------------------------
@@ -400,8 +442,13 @@ class CI_Migration {
 	/**
 	 * Stores the current schema version
 	 *
+<<<<<<< HEAD
 	 * @param	int	$migration	Migration reached
 	 * @return	void	Outputs a report of the migration
+=======
+	 * @param	int	Migration reached
+	 * @return	bool
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 	 */
 	protected function _update_version($migration)
 	{
@@ -415,7 +462,11 @@ class CI_Migration {
 	/**
 	 * Enable the use of CI super-global
 	 *
+<<<<<<< HEAD
 	 * @param	string	$var
+=======
+	 * @param	mixed	$var
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
 	 * @return	mixed
 	 */
 	public function __get($var)

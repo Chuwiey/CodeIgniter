@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 language: php
 
 php:
@@ -26,3 +27,9 @@ branches:
   only:
     - develop
     - /^feature\/.+$/
+=======
+branches:
+  except:
+    - 2.1-stable
+    - master
+>>>>>>> 1886b85a695364b8e3a2e0334a916eaa741ccfec
